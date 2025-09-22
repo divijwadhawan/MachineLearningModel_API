@@ -1,28 +1,28 @@
 # MachineLearningModel_API
 Simple Machine Learning Model making available as an API
 
-# Create Virtual Environment
+## Create Virtual Environment
 python3 -m venv venv
 
-# Activate Venv
+## Activate Venv
 source venv/bin/activate
 
-# Install Requirements
+## Install Requirements
 pip3 install -r requirements.txt
 
-# Train the Model and save it as a .pkl file
+## Train the Model and save it as a .pkl file
 python3 train_model.py
 
-# Run the API
+## Run the API
 python3 api.py
 
-# Use python3 uvicorn to run the server
+## Use python3 uvicorn to run the server
 python3 -m uvicorn main:app --reload
 
-# Server is Live
+## Server is Live
 http://127.0.0.1:8000/docs
 
-# Use Postman to send a request
+## Use Postman to send a request
 URL : http://127.0.0.1:8000/predict
 
 JSON :
