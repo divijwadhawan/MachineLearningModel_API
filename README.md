@@ -32,3 +32,44 @@ JSON :
   "petal_length": 1.4,
   "petal_width": 0.2
 }
+
+
+# To deploy on Render
+
+## Create start command for Render
+Make a file start.sh:
+
+#!/bin/bash
+uvicorn api:app --host 0.0.0.0 --port $PORT
+
+
+Then make it executable:
+chmod +x start.sh
+
+
+## Push code to GitHub.
+Your repo should have:
+
+api.py
+train_model.py
+decision_tree_model.pkl
+requirements.txt
+start.sh
+
+
+## Connect repo to Render → New Web Service.
+
+Runtime: Python
+
+Build Command:
+
+pip install -r requirements.txt && python train_model.py
+
+
+Start Command:
+
+./start.sh
+
+
+## Render will give you a public URL like:
+👉 https://your-app.onrender.com/predict
